@@ -7,26 +7,37 @@
     android:layout_height="match_parent"
     android:background="#3D3B40"
     android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="200dp"
         android:text="Sign in:"
         android:textColor="#F8EDFF"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="48sp" />
 
     <View
         android:id="@+id/view"
         android:layout_width="wrap_content"
         android:layout_height="5dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:background="#525CEB" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Register an Account" />
+
+    <Button
+        android:id="@+id/btnHomePage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="HomePage" />
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>
