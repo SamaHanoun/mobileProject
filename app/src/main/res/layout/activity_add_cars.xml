@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3D3B40"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#525CEB"
+        android:hint="Type"
+        android:inputType="text"
+        android:textColorHint="#F8EDFF" />
+
+    <EditText
+        android:id="@+id/etManufacturer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etType"
+        android:backgroundTint="#525CEB"
+        android:hint="Manufacturer"
+        android:inputType="text"
+        android:textColorHint="#F8EDFF" />
+
+    <EditText
+        android:id="@+id/etModel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etManufacturer"
+        android:backgroundTint="#525CEB"
+        android:hint="Model"
+        android:inputType="text"
+        android:textColorHint="#F8EDFF" />
+
+    <EditText
+        android:id="@+id/etProdYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etModel"
+        android:backgroundTint="#525CEB"
+        android:hint="Production Year"
+        android:inputType="date"
+        android:textColorHint="#F8EDFF" />
+
+    <EditText
+        android:id="@+id/etLicense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etProdYear"
+        android:backgroundTint="#525CEB"
+        android:hint="License Plate"
+        android:inputType="text"
+        android:textColorHint="#F8EDFF" />
+
+    <EditText
+        android:id="@+id/etPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etLicense"
+        android:backgroundTint="#525CEB"
+        android:hint="Price"
+        android:inputType="numberDecimal"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#F8EDFF" />
+
+    <EditText
+        android:id="@+id/etCarCondition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPrice"
+        android:backgroundTint="#525CEB"
+        android:hint="Car Condition"
+        android:inputType="text"
+        android:textColorHint="#F8EDFF" />
+
+    <EditText
+        android:id="@+id/etMileage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etCarCondition"
+        android:backgroundTint="#525CEB"
+        android:hint="Mileage"
+        android:inputType="number"
+        android:textColor="#F8EDFF"
+        android:textColorHint="#F8EDFF" />
+
+    <Button
+        android:id="@+id/btnAddCar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etMileage"
+        android:backgroundTint="#525CEB"
+        android:text="Add Car" />
+
+</RelativeLayout>
