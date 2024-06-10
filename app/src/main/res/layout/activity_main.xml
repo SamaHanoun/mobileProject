@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+tools:context=".MainActivity"
     style="@style/activities_def">
 
     <TextView
@@ -47,6 +47,26 @@
         android:textColorHint="@color/font_color"
         android:textSize="26dp" />
 
+
+    android:background="#3D3B40"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="Sign in:"
+        android:textColor="#F8EDFF"
+        android:textSize="48sp" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:layout_marginTop="20dp"
+        android:background="#525CEB" />
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

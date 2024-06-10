@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="admin_options">
+        <item>Not Admin (0)</item>
+        <item>Admin (1)</item>
+    </string-array>
+</resources>
