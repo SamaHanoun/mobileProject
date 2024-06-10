@@ -5,28 +5,48 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3D3B40"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    style="@style/activities_def">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="200dp"
+        style="@style/font"
+        android:layout_gravity="center"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="60dp"
+
         android:text="Sign in:"
-        android:textColor="#F8EDFF"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="150dp"
+        />
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="wrap_content"
-        android:layout_height="5dp"
-        android:layout_marginLeft="20dp"
-        android:background="#525CEB" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        style="@style/font"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:hint="Email:"
+        android:outlineProvider="bounds"
+        android:outlineSpotShadowColor="@color/blue_theme"
+        android:textColorHint="@color/font_color"
+        android:textSize="26dp" />
+
+    <EditText
+        android:id="@+id/edtPassword"
+        style="@style/font"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password:"
+        android:outlineSpotShadowColor="@color/blue_theme"
+        android:outlineProvider="bounds"
+        android:textColorHint="@color/font_color"
+        android:textSize="26dp" />
+
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>
