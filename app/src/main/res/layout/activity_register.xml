@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3D3B40"
+    android:outlineAmbientShadowColor="#652525">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/etId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#525CEB"
+            android:hint="ID"
+            android:textColorHint="#F8EDFF" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#525CEB"
+            android:hint="Name"
+            android:textColorHint="#F8EDFF" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#525CEB"
+            android:hint="Email"
+            android:textColorHint="#F8EDFF" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#525CEB"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColorHint="#F8EDFF" />
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#525CEB"
+            android:hint="Phone"
+            android:textColorHint="#F8EDFF" />
+
+        <EditText
+            android:id="@+id/etAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#525CEB"
+            android:hint="Address"
+            android:textColorHint="#F8EDFF" />
+
+        <EditText
+            android:id="@+id/etLicense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#525CEB"
+            android:hint="License"
+            android:textColorHint="#F8EDFF" />
+
+        <Spinner
+            android:id="@+id/spinnerAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/admin_options"/>
+
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#525CEB"
+            android:text="Register" />
+
+    </LinearLayout>
+</ScrollView>
