@@ -11,6 +11,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.NetworkResponse;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonRequest;
+
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -21,7 +27,8 @@ import java.net.URL;
 
 public class activity_register extends AppCompatActivity {
 
-    private EditText etId, etName, etEmail, etPassword, etPhone, etAddress, etLicense;
+    private EditText etName, etEmail, etPassword, etPhone, etAddress, etLicense;
+    //private EditText etId;
     private Button btnRegister;
     private UserRepository userRepository;
 
@@ -29,9 +36,70 @@ public class activity_register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        String url = "http://localhost/addUser.php";
+
         etName = findViewById(R.id.etName);
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
+        etPhone = findViewById(R.id.etPhone);
+        etAddress = findViewById(R.id.etAddress);
+        etLicense = findViewById(R.id.etLicense);
+        btnRegister = findViewById(R.id.btnRegister);
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                User user = new User(
+                        etName.getText().toString(),
+                        etEmail.getText().toString(),
+                        etPassword.getText().toString(),
+                        etPhone.getText().toString(),
+                        etAddress.getText().toString(),
+                        etLicense.getText().toString()
+                );
+                JSONObject data = new JSONObject();
+
+                try {
+                    data.put("name", user.getName());
+                    data.put("email", user.getEmail());
+                    data.put("password", user.getPassword());
+                    data.put("phone", user.getPhone());
+                    data.put("address", user.getAddress());
+                    data.put("license", user.getLicense());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                JsonRequest jsonRequest = new JsonRequest(Request.Method.POST, url, data.toString(),
+                        new Response.Listener() {
+                            @Override
+                            public void onResponse(Object o) {
+                                Log.d("php Response", "succeed");
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError volleyError) {
+                                Log.d("php Response", "fail");
+                            }
+                        }
+                ) {
+                    @Override
+                    protected Response parseNetworkResponse(NetworkResponse networkResponse) {
+                        return null;
+                    }
+                };
+
+
+            }
+        });
+
+
+
+
+
+        /*etName = findViewById(R.id.etName);
+        etEmail = findViewById(R.id.etEmail);
+        tPassword = findViewById(R.id.etPassword);
         etAddress = findViewById(R.id.etAddress);
         etId = findViewById(R.id.etId);
         etPhone = findViewById(R.id.etPhone);
@@ -69,6 +137,6 @@ public class activity_register extends AppCompatActivity {
             Toast.makeText(this, "User registered successfully", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Registration failed", Toast.LENGTH_SHORT).show();
-        }
+        }*/
     }
 }

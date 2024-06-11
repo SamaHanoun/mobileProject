@@ -8,7 +8,7 @@ public class User {
     private String phone;
     private String address;
     private String license;
-    private boolean admin;
+    private boolean admin = false;
 
     public User(int id, String name, String email, String password, String phone, String address, String license, boolean admin) {
         this.id = id;
@@ -19,6 +19,15 @@ public class User {
         this.address = address;
         this.license = license;
         this.admin = admin;
+    }
+
+    public User(String name, String email, String password, String phone, String address, String license) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.address = address;
+        this.license = license;
     }
 
     public int getId() {

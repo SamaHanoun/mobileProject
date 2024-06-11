@@ -1,5 +1,6 @@
 package com.example.carrentalproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,8 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
             btnRegister = findViewById(R.id.btnRegister);
             btnRegister.setOnClickListener(view -> {
-                /*Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-                startActivity(intent);*/
+                Intent intent = new Intent(MainActivity.this, activity_register.class);
+                startActivity(intent);
+
             });
 
             btnSignin = findViewById(R.id.btnSignin);

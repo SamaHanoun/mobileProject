@@ -1,86 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3D3B40"
-    android:outlineAmbientShadowColor="#652525">
+    style="@style/activities_def"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+    >
 
-        <EditText
-            android:id="@+id/etId"
+
+        <TextView
+            style="@style/font"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#525CEB"
-            android:hint="ID"
-            android:textColorHint="#F8EDFF" />
-
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="35dp"
+            android:background="@color/grey"
+            android:gravity="center"
+            android:text="Registeration"
+            android:textColor="@color/blue_theme"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:paddingTop="40dp"
+            android:paddingBottom="10dp"
+            />
         <EditText
             android:id="@+id/etName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#525CEB"
-            android:hint="Name"
-            android:textColorHint="#F8EDFF" />
+            style="@style/font_edt_text"
+            android:hint="Name" />
 
         <EditText
             android:id="@+id/etEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#525CEB"
             android:hint="Email"
-            android:textColorHint="#F8EDFF" />
+            style="@style/font_edt_text"/>
 
         <EditText
             android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#525CEB"
             android:hint="Password"
             android:inputType="textPassword"
-            android:textColorHint="#F8EDFF" />
+            style="@style/font_edt_text"
+            />
 
         <EditText
             android:id="@+id/etPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#525CEB"
             android:hint="Phone"
-            android:textColorHint="#F8EDFF" />
+            style="@style/font_edt_text" />
 
         <EditText
             android:id="@+id/etAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#525CEB"
             android:hint="Address"
-            android:textColorHint="#F8EDFF" />
+            style="@style/font_edt_text" />
 
         <EditText
             android:id="@+id/etLicense"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#525CEB"
-            android:hint="License"
-            android:textColorHint="#F8EDFF" />
-
-        <Spinner
-            android:id="@+id/spinnerAdmin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/admin_options"/>
-
+            android:hint="License Number"
+            style="@style/font_edt_text" />
 
         <Button
             android:id="@+id/btnRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#525CEB"
+            style="@style/button"
+            android:layout_gravity="bottom|center_horizontal"
             android:text="Register" />
 
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>

@@ -24,11 +24,11 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Initialize views
-        btnSignIn = findViewById(R.id.btn_sign_in);
+        /*btnSignIn = findViewById(R.id.btn_sign_in);
         btnRegister = findViewById(R.id.btn_register);
         searchBar = findViewById(R.id.search_bar);
         btnGooglePlay = findViewById(R.id.btn_google_play);
-        btnAppStore = findViewById(R.id.btn_app_store);
+        btnAppStore = findViewById(R.id.btn_app_store);*/
 
         // Set click listeners
         btnSignIn.setOnClickListener(new View.OnClickListener() {
