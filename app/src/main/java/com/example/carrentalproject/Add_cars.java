@@ -41,7 +41,7 @@ public class Add_cars extends AppCompatActivity {
         String type = etType.getText().toString().trim();
         String manufacturer = etManufacturer.getText().toString().trim();
         String model = etModel.getText().toString().trim();
-        Date prodYear = new Date(); // You can parse the date from etProdYear as needed
+        String prodYear = new String(); // You can parse the date from etProdYear as needed
         String license = etLicense.getText().toString().trim();
         double price = Double.parseDouble(etPrice.getText().toString().trim());
         String carCondition = etCarCondition.getText().toString().trim();

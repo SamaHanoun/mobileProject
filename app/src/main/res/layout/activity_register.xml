@@ -11,13 +11,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <EditText
-            android:id="@+id/etId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#525CEB"
-            android:hint="ID"
-            android:textColorHint="#F8EDFF" />
 
         <EditText
             android:id="@+id/etName"
@@ -69,9 +62,11 @@
             android:textColorHint="#F8EDFF" />
 
         <Spinner
-            android:id="@+id/spinnerAdmin"
+            android:id="@+id/roleSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Choose Role"
+            android:textColorHint="#F8EDFF"
             android:entries="@array/admin_options"/>
 
 

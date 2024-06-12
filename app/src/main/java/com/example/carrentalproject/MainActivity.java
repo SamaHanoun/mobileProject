@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.content.Intent;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
             btnRegister = findViewById(R.id.btnRegister);
             btnRegister.setOnClickListener(view -> {
-                /*Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-                startActivity(intent);*/
+                Intent intent = new Intent(MainActivity.this, activity_register.class);
+                startActivity(intent);
             });
 
             btnSignin = findViewById(R.id.btnSignin);
@@ -44,5 +46,4 @@ public class MainActivity extends AppCompatActivity {
 
             return insets;
         });
-    }
-}
+    }}
