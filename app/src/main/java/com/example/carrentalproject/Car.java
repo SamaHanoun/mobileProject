@@ -8,7 +8,7 @@ public class Car {
     private String type;
     private String manufacturer;
     private String model;
-    private Date prodYear;
+    private String prodYear;
     private String license;
     private double price;
     private boolean booked;
@@ -19,7 +19,7 @@ public class Car {
     public Car() {
     }
 
-    public Car(int id, String type, String manufacturer, String model, Date prodYear, String license,
+    public Car(int id, String type, String manufacturer, String model, String prodYear, String license,
                double price, boolean booked, String carCondition, int mileage) {
         this.id = id;
         this.type = type;
@@ -66,11 +66,11 @@ public class Car {
         this.model = model;
     }
 
-    public Date getProdYear() {
+    public String getProdYear() {
         return prodYear;
     }
 
-    public void setProdYear(Date prodYear) {
+    public void setProdYear(String prodYear) {
         this.prodYear = prodYear;
     }
 
