@@ -13,9 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
 
@@ -36,7 +38,7 @@ public class activity_register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        String url = "http://localhost/addUser.php";
+        String url = "localhost/comp4310 mobile/addUser.php";
 
         etName = findViewById(R.id.etName);
         etEmail = findViewById(R.id.etEmail);
@@ -88,55 +90,9 @@ public class activity_register extends AppCompatActivity {
                         return null;
                     }
                 };
-
-
+                RequestQueue queue = Volley.newRequestQueue(activity_register.this);
+                queue.add(jsonRequest);
             }
         });
-
-
-
-
-
-        /*etName = findViewById(R.id.etName);
-        etEmail = findViewById(R.id.etEmail);
-        tPassword = findViewById(R.id.etPassword);
-        etAddress = findViewById(R.id.etAddress);
-        etId = findViewById(R.id.etId);
-        etPhone = findViewById(R.id.etPhone);
-        btnRegister = findViewById(R.id.btnRegister);
-
-        userRepository = new MockUserRepository(); // Use com.example.carrentalproject.MockUserRepository
-
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                registerUser();
-            }
-        });
-    }
-
-    private void registerUser() {
-        String name = etName.getText().toString().trim();
-        String email = etEmail.getText().toString().trim();
-        String password = etPassword.getText().toString().trim();
-        String address = etAddress.getText().toString().trim();
-        String id = etId.getText().toString().trim();
-        String phone = etPhone.getText().toString().trim();
-
-        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password) ||
-                TextUtils.isEmpty(address) || TextUtils.isEmpty(id) || TextUtils.isEmpty(phone)) {
-            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        User newUser = new User(Integer.parseInt(id), name, email, password, phone, address, "", false);
-
-        // Use com.example.carrentalproject.MockUserRepository instead of actual database call
-        boolean registrationSuccessful = userRepository.registerUser(newUser);
-        if (registrationSuccessful) {
-            Toast.makeText(this, "User registered successfully", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Registration failed", Toast.LENGTH_SHORT).show();
-        }*/
     }
 }

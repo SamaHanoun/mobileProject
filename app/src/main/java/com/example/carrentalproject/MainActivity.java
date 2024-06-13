@@ -18,8 +18,12 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
+
+import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -55,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 String email = edtEmail.getText().toString();
                 String password = edtPassword.getText().toString();
 
-                String url = "http://localhost:80/comp4310 mobile/signIn.php";
+                String url = "http://10.0.2.2:80/comp4310 mobile/signIn.php";
 
                 if (email.isEmpty() || password.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please enter email and password", Toast.LENGTH_SHORT).show();
@@ -64,56 +68,55 @@ public class MainActivity extends AppCompatActivity {
 
                 RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
 
-                JSONObject data = new JSONObject();
+                JSONArray data = new JSONArray();
 
-                try {
-                    data.put("email", email);
-                    data.put("password", password);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                data.put(email);
+                data.put(password);
+
                 Log.d("jsonObjectData", data.toString());
-                JsonRequest jsonRequest = new JsonRequest(Request.Method.POST, url, data.toString(),
+                JsonArrayRequest request = new JsonArrayRequest(
+                        Request.Method.POST, url, null,
                         new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        Log.d("jsonObjectData", response.toString());
-                        try {
-                            JSONObject obj = response.getJSONArray(0).getJSONObject(0);
+                            @Override
+                            public void onResponse(JSONArray response) {
+                                Log.d("jsonObjectData", response.toString());
 
-                            String uid = obj.getString("uid");
-                            Log.d("jsonObjectData", uid);
-                            Intent intent = new Intent(
-                                    MainActivity.this,
-                                    HomePage.class
-                            );
-                            startActivity(intent);
+                                ArrayList<String> todos = new ArrayList<>();
+                                for (int i = 0; i < 20; i++) {
+                                    try {
+                                        JSONObject obj = response.getJSONObject(i);
+                                        todos.add(obj.getString("title"));
 
-                        } catch (JSONException exception) {
-                            Log.d("jsonObjectData", exception.toString());
-                        }
+                                        /*JSONObject obj = response.getJSONObject("data");*/
+                                        String uid = obj.toString();
+                                        Log.d("jsonObjectData", uid);
+                                        Intent intent = new Intent(
+                                            MainActivity.this,
+                                            HomePage.class
+                                        );
+                                        startActivity(intent);
 
-
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
-                        Log.d("jsonObjectData", error.toString());
-                    }
-
-                }) {
-                    @Override
-                    protected Response parseNetworkResponse(NetworkResponse networkResponse) {
-                        return null;
-                    }
-                };
-                queue.add(jsonRequest);
+                                    } catch (JSONException exception) {
+                                        Log.d("jsonObjectData", exception.toString());
+                                    }
 
 
+                                }
+                            }, new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError e) {
+                                    Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
+                                    Log.d("jsonObjectData", e.toString());
+                                }
+
+                            }
+                            });
+                            queue.add(request);
+
+
+                        });
+
+                        return insets;
             });
-
-            return insets;
-        });
+        }
     }
-}
