@@ -74,12 +74,4 @@
             android:text="Register" />
     </LinearLayout>
 
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="wrap_content"
-        android:layout_height="5dp"
-        android:layout_marginTop="20dp"
-        android:background="#525CEB" />
-
 </androidx.appcompat.widget.LinearLayoutCompat>
