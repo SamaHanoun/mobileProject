@@ -13,13 +13,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CarRentalProject"
+        tools:targetApi="31"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31">
+        android:networkSecurityConfig="@xml/network_security_config">
         <activity
-            android:name=".searchCars"
+            android:name=".CarDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".HomePage"
+            android:name=".CarListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".carListAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".MockUserRepository"
+            android:exported="false" />
+        <activity
+            android:name=".Order"
+            android:exported="false" />
+        <activity
+            android:name=".User"
+            android:exported="false" />
+        <activity
+            android:name=".UserRepository"
+            android:exported="false" />
+        <activity
+            android:name=".ViewCarList"
+            android:exported="false" />
+        <activity
+            android:name=".Car"
             android:exported="false" />
         <activity
             android:name=".Add_cars"
@@ -30,12 +52,16 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
     </application>
 
 </manifest>
